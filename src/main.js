@@ -23,9 +23,8 @@ function onFormSubmitBtnClick(event) {
   const input = event.target.elements[0].value.trim();
   if (!input) {
     iziToast.show({
-      title: 'Sorry, ',
-      message:
-        'there are no images matching your search query. Please try again!',
+      title: 'Caution',
+      message: 'Search field cannot be empty. Please enter a keyword!',
       position: 'topRight',
     });
     return;
