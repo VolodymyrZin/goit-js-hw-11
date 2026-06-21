@@ -32,9 +32,9 @@ function onFormSubmitBtnClick(event) {
   clearGallery();
   showLoader();
   getImagesByQuery(input)
-    .then(response => {
+    .then(data => {
       hideLoader();
-      if (response.data.hits.length === 0) {
+      if (data.hits.length === 0) {
         iziToast.error({
           title: 'Sorry, ',
           message:
@@ -43,7 +43,7 @@ function onFormSubmitBtnClick(event) {
         });
         return;
       }
-      createGallery(response.data.hits);
+      createGallery(data.hits);
     })
 
     .catch(error => {
